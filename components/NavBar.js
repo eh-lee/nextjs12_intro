@@ -1,35 +1,28 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import styles from "./NavBar.module.css";
-// css module pattern
 
 export default function NavBar() {
   const router = useRouter();
   console.log(router);
 
   return (
-    <nav className={styles.nav}>
-      {/* 해당 페이지가 빌드될 때  */}
-      {/* NextJs가 class 이름을 무작위로 변환해 줌  */}
-      {/* ex) <nav class="NavBar_nav__i8le3">*/}
-      {/* 클래스 이름의 재사용 가능 */}
-      <Link
-        href="/"
-        className={`${styles.link} ${
-          router.pathname === "/" ? styles.active : ""
-        }`}
-      >
-        Home
+    <nav>
+      <Link href="/">
+        <span className={router.pathname === "/" ? "active" : ""}>Home</span>
       </Link>
-      <Link
-        href="/about"
-        className={[
-          styles.link,
-          router.pathname === "/about" ? styles.active : "",
-        ].join(" ")}
-      >
-        About Us
+      <Link href="/about">
+        <span className={router.pathname === "/about" ? "active" : ""}>
+          About Us
+        </span>
       </Link>
+      <style jsx>{`
+        nav {
+          background-color: brown;
+        }
+        span.active {
+          color: white;
+        }
+      `}</style>
     </nav>
   );
 }
