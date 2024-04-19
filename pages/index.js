@@ -1,8 +1,14 @@
-import React from "react";
-import NavBar from "../components/NavBar";
+// home path
+
+import Seo from "../components/Seo";
 
 function index() {
-  return ;
+  return (
+    <div>
+      <Seo title="Home" />
+      <h1>Hello</h1>
+    </div>
+  );
 }
 
 export default index;
