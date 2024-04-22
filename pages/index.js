@@ -1,6 +1,6 @@
 // home path
 
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import Seo from "../components/Seo";
 import Link from "next/link";
 
@@ -79,6 +79,10 @@ export default Home;
 // 아래 예시 펑션은 only server side에서만 실행되는 코드
 // API_KEY 같은 거 client에서 보이지 않음
 // 펑션명은 고정 'getServerSideProps'
+// 서버에서 실행되면 -> _app "pageProps"
+// -> index의 Home func "props"(movies) (source code에서는 "__NEXT_DATA__")
+// 그다음 react.js와 상호작용
+// Data가 다 준비되었을 때, Home func가 보임
 export async function getServerSideProps() {
   try {
     const response = await fetch("http://localhost:3000/api/movies", {
