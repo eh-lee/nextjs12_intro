@@ -4,8 +4,6 @@ import { useEffect, useState } from "react";
 import Seo from "../components/Seo";
 import Link from "next/link";
 
-const TMDB_API_KEY = "5424b660c2431e8f43b45f743c3c042c";
-
 function index() {
 
   const [movies, setMovies] = useState([]);
