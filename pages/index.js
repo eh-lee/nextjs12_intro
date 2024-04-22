@@ -13,7 +13,9 @@ function index() {
  useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://api.themoviedb.org/3/movie/popular', {
+        // const response = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${TMDB_API_KEY}`, {
+        const response = await fetch("/api/movies", {
+        // const response = await fetch('https://api.themoviedb.org/3/movie/popular?', {
           method: 'GET',
           headers: {
             accept: 'application/json',
