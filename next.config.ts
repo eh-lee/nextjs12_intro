@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
-const TMDB_API_KEY = process.env.TMDB_API_KEY;
+const TMDB_API_KEY: string | undefined = process.env.TMDB_API_KEY;
+// "string | undefined" => value가 undefined인 경우 예외 처리를 위함
 
 const nextConfig = {
   reactStrictMode: true,
