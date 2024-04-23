@@ -9,22 +9,28 @@ import Link from "next/link";
 export default function Home({ movies }) {
   const router = useRouter();
   const onClickMovieRoutingHandler = (id, title) => {
-    router.push(
-      {
-        pathname: `/movies/${id}`,
-        query: {
-          id,
-          title,
-        },
-      },
-      // "URL MASKING"
-      // 유저에게 노출될 URL의 형식
-      // router 문법의 'as' parameter임
-      `/movies/${id}`
+    router.push(`/movies/${title}/${id}`,)
+
+    // ********* masking 1 ************  
+    // router.push(
+      //   {
+        //     pathname: `/movies/${id}`,
+        //     query: {
+          //       id,
+          //       title,
+          //     },
+          //   },
+    // ********* masking 1 ************
+    
+    
+          // "URL MASKING"
+          // 유저에게 노출될 URL의 형식
+          // router 문법의 'as' parameter임
+          // `/movies/${id}`
       // 마스킹을 활용해도 router 객체에서
       // query 부분을 여전히 확인 가능
       // 유저에게만 안 보이는 것
-    );
+    // );
   };
 
   return (
@@ -40,14 +46,15 @@ export default function Home({ movies }) {
         >
           <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} />
           {/* <Link href={`/movies/${movie.id}`}> */}
-          <Link
-            href={{
-              pathname: `/movies/${movie.id}`,
-              query: {
-                title: movie.original_title,
-              },
-            }}
-            as={`/movies/${movie.id}`}
+          <Link href={`/movies/${movie.original_title}/${movie.id}`}
+            // ************ masking way 1 ***********
+            // href={{
+            //   pathname: `/movies/${movie.id}`,
+            //   query: {
+            //     title: movie.original_title,
+            //   },
+            // }}
+            // as={`/movies/${movie.id}`}
           >
             <h4>{movie.original_title}</h4>
           </Link>
