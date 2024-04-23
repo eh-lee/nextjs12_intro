@@ -1,3 +1,5 @@
+// 수정 필요
+// ISSUE: serverProps를 제대로 못 받아옴
 import { useRouter } from "next/router";
 import Seo from "../../components/Seo";
 import { GetServerSideProps } from "next";
