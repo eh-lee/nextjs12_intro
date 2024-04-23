@@ -1,11 +1,12 @@
+import React from 'react';
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-export default function NavBar() {
+const NavBar: React.FC = () => {
   const router = useRouter();
   return (
     <nav>
-      <img src="/vercel.svg" />
+      <img src="/vercel.svg" alt="vercel logo" />
       <div>
         <Link href="/">
           <span className={router.pathname === "/" ? "active" : ""}>Home</span>
@@ -43,4 +44,6 @@ export default function NavBar() {
       `}</style>
     </nav>
   );
-}
+};
+
+export default NavBar;
