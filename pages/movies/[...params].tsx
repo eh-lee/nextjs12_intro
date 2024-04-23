@@ -4,7 +4,7 @@ import { GetServerSideProps } from "next";
 
 type DetailProps = {
   title: string,
-  id: string,
+  id: number,
 };
 
 export default function Detail({ title }: DetailProps) {
@@ -24,7 +24,7 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
 
   // 예외 처리
   const safeTitle = title ?? "Unknown Title";
-  const safeId = id ?? "Unknown ID";
+  const safeId = id ?? 1230000;
 
   return {
     props: {

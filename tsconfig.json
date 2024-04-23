@@ -21,7 +21,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "pages/movies/[...params].js", "pages/movies/[...params].js", "pages/movies/[...params].js", "pages/movies/[...params].js"  ],
   "exclude": [
     "node_modules"
   ]
