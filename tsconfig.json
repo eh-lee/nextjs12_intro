@@ -20,8 +20,11 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
-, "pages/movies/[...params].js", "pages/movies/[...params].js", "pages/movies/[...params].js", "pages/movies/[...params].js"  ],
+    "**/*.tsx",
+    // "next.config.ts",
+    "next.config.js",
+    "pages/**/*.ts", 
+  ],
   "exclude": [
     "node_modules"
   ]
