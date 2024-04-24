@@ -20,16 +20,19 @@ const Home: React.FC<HomeProps> = ({ movies }) => {
   };
 
   return (
+    // <div className="grid grid-cols-2 p-20 gap-20">
     <div className="container">
       <Seo title="Home" />
       {movies?.map((movie) => (
         <div
+        // className="cursor-pointer"
+        className="movie"
           onClick={() => onClickMovieRoutingHandler(movie.id, movie.original_title)}
-          className="movie"
           key={movie.id}
         >
           <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} />
           <Link href={`/movies/${encodeURIComponent(movie.original_title)}/${movie.id}`}>
+            {/* <h4 className="text-center text-lg">{movie.original_title}</h4> */}
             <h4>{movie.original_title}</h4>
           </Link>
         </div>
